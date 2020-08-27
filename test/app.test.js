@@ -4,15 +4,13 @@ require('dotenv').config();
 
 const chai = require('chai');
 const expect = chai.expect;
-
-const appPort = process.env.PORT;
-const url = `http://localhost:` + appPort;
-const request = require('supertest')(url);
+const supertest = require('supertest')
+const app = require('../main')
 
 describe('GraphQL', () => {
   // Tests for type buy
   it('Returns price for type buy', done => {
-    request
+    supertest(app)
       .post('/graphql')
       .send({
         query:
@@ -31,7 +29,7 @@ describe('GraphQL', () => {
 
   // Tests for type sell
   it('Returns price for type sell', done => {
-    request
+    supertest(app)
       .post('/graphql')
       .send({
         query:

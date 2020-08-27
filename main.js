@@ -32,3 +32,5 @@ app.use(
 app.listen(appPort, () => {
   console.log(`Server Running - :${appPort}/graphql`);
 });
+
+module.exports = app;

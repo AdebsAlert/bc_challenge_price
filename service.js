@@ -23,7 +23,7 @@ const getPrice = async args => {
           if (resp && resp.error) {
             return reject('please enter a valid type (buy/sell)');
           } else {
-            payload = JSON.parse(resp.body)['bpi']['USD'];
+            var payload = JSON.parse(resp.body)['bpi']['USD'];
             if (type === 'sell') {
               newPrice = payload.rate_float - margin * payload.rate_float;
             } else if (type === 'buy') {
