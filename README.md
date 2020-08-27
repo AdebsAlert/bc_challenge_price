@@ -14,6 +14,6 @@
 - **Query Variables:**
   {
     "type": "sell",
-    "margin": 0.2,
+    "margin": 0.5,
     "exchangeRate": "USD"
   }
